@@ -94,6 +94,9 @@ Alpine.start()
 A lot of the times you only need a property from the response object, this is
 usually `data`. You'll see/write stuff like this:
 
+_Please note, this depends on the API response and not all APIs will share the
+same response format._
+
 ```js
 const { data } = fetch('https://dummyjson.com/products/1')
 ```

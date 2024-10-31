@@ -6,12 +6,13 @@ export const apiGet = (apiUrl = '', apiOptions = {}) => {
       const { endpointUrl, endpointData } = splitUrl(apiUrl)
 
       const apiResponse = await fetch(endpointUrl, apiOptions)
+      const responseAsJson = await apiResponse.json()
 
       if (!endpointData) {
-        return apiResponse
+        return responseAsJson
       }
 
-      return filterResponse(apiResponse, endpointData)
+      return filterResponse(responseAsJson, endpointData)
     } catch (apiError) {
       return apiError
     }
@@ -30,12 +31,13 @@ export const apiPost = (apiUrl = '', apiData = {}, apiOptions = {}) => {
         body: JSON.stringify(apiData),
         ...apiOptions,
       })
+      const responseAsJson = await apiResponse.json()
 
       if (!endpointData) {
-        return apiResponse
+        return responseAsJson
       }
 
-      return filterResponse(apiResponse, endpointData)
+      return filterResponse(responseAsJson, endpointData)
     } catch (apiError) {
       return apiError
     }
@@ -54,12 +56,13 @@ export const apiPut = (apiUrl = '', apiData = {}, apiOptions = {}) => {
         body: JSON.stringify(apiData),
         ...apiOptions,
       })
+      const responseAsJson = await apiResponse.json()
 
       if (!endpointData) {
-        return apiResponse
+        return responseAsJson
       }
 
-      return filterResponse(apiResponse, endpointData)
+      return filterResponse(responseAsJson, endpointData)
     } catch (apiError) {
       return apiError
     }
@@ -77,12 +80,13 @@ export const apiDelete = (apiUrl = '', apiOptions = {}) => {
         method: 'DELETE',
         ...apiOptions,
       })
+      const responseAsJson = await apiResponse.json()
 
       if (!endpointData) {
-        return apiResponse
+        return responseAsJson
       }
 
-      return filterResponse(apiResponse, endpointData)
+      return filterResponse(responseAsJson, endpointData)
     } catch (apiError) {
       return apiError
     }

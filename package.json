@@ -1,6 +1,6 @@
 {
   "name": "alpinejs-fetch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Alpine JS magic methods wrapper for fetch API methods 📨",
   "keywords": [
     "Alpine",
